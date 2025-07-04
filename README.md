@@ -1,5 +1,24 @@
 # 🧰 Kevin’s Home Lab Build
 
+## 🖥️ Main Services
+
+### 🔧 Proxmox VE
+
+- Virtualization Host
+- **Running:**
+  - `glances` (system monitoring)
+  - `jellyfin` (media server w/ HW acceleration)
+  - `truenas` (dedicated NAS VM for ZFS storage and network shares)
+  - `uptime kuma` (service uptime monitor with web dashboard)
+  - `tailscale` (secure remote access via mesh VPN)
+  - `opnsense` (virtual firewall for network routing and security)
+
+### 🛡️ Raspberry Pi 5
+
+- **Running:** `Pi-hole` (network-wide DNS ad blocking)
+
+---
+
 ## 🗄️ Rack Cabinet
 
 **Model:** GeeekPi 8U 10-inch Server Cabinet  
@@ -61,6 +80,28 @@
 
 ---
 
+## 📦 Storage System
+
+- **Drives:** 2× Western Digital 4TB WD Red Plus NAS HDDs
+
+  - 3.5", 5400 RPM, SATA 6 Gb/s, 256 MB Cache
+  - Model: WD40EFPX
+
+- **Drive Trays:** Dell 3.5" SAS/SATA Hard Drive Caddies
+
+  - Model: KG1CH / 0KG1CH
+  - Compatible with Dell PowerEdge-style tray mounts
+
+- **Tray Mounts:** Custom 3D-Printed Front-Access Holders
+
+  - Designed to hold Dell-style caddies securely in the 10" rack
+
+- **Adapters:** SATA Male-to-Female 22-pin (7+15)
+  - Provide direct clean connection for power and data
+  - Allow easy cable routing inside the chassis
+
+---
+
 ## 🍓 Raspberry Pi 5 Setup
 
 - **Board:** Raspberry Pi 5
@@ -69,19 +110,4 @@
 
 ---
 
-## 🖥️ Main Services
-
-### 🔧 Proxmox VE
-
-- Virtualization Host
-- **Running:**
-  - `glances` (system monitoring)
-  - `jellyfin` (media server w/ HW acceleration)
-
-### 🛡️ Raspberry Pi 5
-
-- **Running:** `Pi-hole` (network-wide DNS ad blocking)
-
----
-
-> Maintained by Kevin | 📅 Last updated: June 2025
+> Maintained by Kevin | 📅 Last updated: July 2025
