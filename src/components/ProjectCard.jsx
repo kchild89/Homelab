@@ -1,33 +1,20 @@
 import Image from "next/image";
+import Link from "next/link";
 
-export default function ProjectCard({ title, description, image, link }) {
+export default function ProjectCard({ title, description, image, link, linkLabel = "View project", download = false }) {
+  const linkClassName = "inline-block rounded bg-blue-600 px-4 py-2 text-sm text-white hover:bg-blue-700";
   return (
-    <div className="bg-white dark:bg-gray-800 shadow-md rounded-lg overflow-hidden transition transform hover:scale-[1.02]">
-      {image && (
-        <Image
-          src={image}
-          alt={title}
-          width={640}
-          height={360}
-          className="w-full h-48 object-cover"
-        />
-      )}
-      <div className="p-4">
-        <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">
-          {title}
-        </h3>
-        <p className="text-gray-700 dark:text-gray-300 mb-4">{description}</p>
-        {link && (
-          <a
-            href={link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block px-4 py-2 bg-blue-600 text-white text-sm rounded hover:bg-blue-700"
-          >
-            View Project
-          </a>
-        )}
+    <article className="overflow-hidden rounded-lg bg-white shadow-md dark:bg-gray-800">
+      {image && <Image src={image} alt={title} width={640} height={360} className="h-48 w-full object-cover" />}
+      <div className="space-y-4 p-6">
+        <h2 className="text-xl font-semibold text-gray-900 dark:text-white">{title}</h2>
+        <p className="text-gray-700 dark:text-gray-300">{description}</p>
+        {link && (download ? (
+          <a href={link} download className={linkClassName}>{linkLabel}</a>
+        ) : (
+          <Link href={link} className={linkClassName}>{linkLabel}</Link>
+        ))}
       </div>
-    </div>
+    </article>
   );
 }

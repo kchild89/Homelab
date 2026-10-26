@@ -15,13 +15,14 @@ export default function Header() {
 
   return (
     <header className="bg-gray-900 text-white shadow-md">
-      <nav className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-        <h1 className="text-2xl font-bold tracking-tight">Kevin’s Portfolio</h1>
-        <ul className="flex gap-6">
+      <nav aria-label="Main navigation" className="max-w-6xl mx-auto px-4 py-4 flex flex-wrap justify-between items-center gap-4">
+        <Link href="/" className="text-2xl font-bold tracking-tight">Kevin’s HomeLab</Link>
+        <ul className="flex flex-wrap gap-x-6 gap-y-3">
           {navItems.map((item) => (
             <li key={item.href}>
               <Link
                 href={item.href}
+                aria-current={pathname === item.href ? "page" : undefined}
                 className={`hover:text-blue-400 transition ${
                   pathname === item.href ? "text-blue-400" : ""
                 }`}
